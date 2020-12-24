@@ -1,11 +1,17 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import './Input.css'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import './Input.css';
 
 
 const Input = () => {
 
+    const [userNumber, setUserNumber] = useState(0);
     const dispatch = useDispatch();
+
+    const handleChange = (e) => {
+        let val = Number(e.target.value)
+        setUserNumber(val);
+    }
 
     return (
         <div className='input-container'>
@@ -14,6 +20,12 @@ const Input = () => {
                 <button onClick={() => dispatch({ type: 'INCREMENT' })} >INCREMENT</button>
                 <button onClick={() => dispatch({ type: 'DECREMENT' })} > DECREMENT</button>
             </div>
+            <input onChange={handleChange} type='number' />
+            <button
+                onClick={() => dispatch({ type: 'USER_NUMBER', payload: { value: userNumber } })}
+            >
+                Payload
+            </button>
             <p>Input Component</p>
         </div>
     )

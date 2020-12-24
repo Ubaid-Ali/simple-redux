@@ -9,6 +9,8 @@ export default function CounterReducer(state = initialState, action) {
             return { ...state, counter: state.counter + 1 };
         case 'DECREMENT':
             return { ...state, counter: state.counter - 1 };
+        case 'USER_NUMBER':
+            return { ...state, counter: state.counter + action.payload.value }
         default:
             return state;
     }

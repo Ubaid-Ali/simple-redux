@@ -1,6 +1,7 @@
 .input-container {
     display: flex;
     flex-flow: column;
+    border: 1px solid black;
 }
 
 .buttons {
@@ -8,8 +9,7 @@
     justify-content: space-evenly;
 }
 
-button {
+button, input {
     margin: 10px;
     padding: 10px;
 }
-
