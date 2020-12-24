@@ -1,15 +1,18 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import './Input.css'
 
 
-const Input = ({ counter, setCounter }) => {
+const Input = () => {
+
+    const dispatch = useDispatch();
 
     return (
         <div className='input-container'>
 
             <div className='buttons'>
-                <button onClick={() => setCounter(counter + 1)} >INCREMENT</button>
-                <button onClick={() => setCounter(counter - 1)} >DECREMENT</button>
+                <button onClick={() => dispatch({ type: 'INCREMENT' })} >INCREMENT</button>
+                <button onClick={() => dispatch({ type: 'DECREMENT' })} > DECREMENT</button>
             </div>
             <p>Input Component</p>
         </div>

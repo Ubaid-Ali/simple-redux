@@ -1,10 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-const Output = ({ counter }) => {
+
+
+
+const Output = () => {
+
+    const counter = useSelector(state => state.counter);
+    console.log('counter ', counter)
+
     return (
         <div>
             <p>Output Component Counter is:</p>
-            <h4>{counter}</h4>
+            <h4> Counter value is {counter} </h4>
         </div>
     )
 }
