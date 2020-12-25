@@ -1,0 +1,5 @@
+ran commands
+
+npx create-reat-app simple-redux
+
+yarn add redux @react-redux

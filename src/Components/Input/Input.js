@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { incrementAction, decrementAction } from '../Redux/Action'
 import './Input.css';
 
 
@@ -17,8 +18,8 @@ const Input = () => {
         <div className='input-container'>
 
             <div className='buttons'>
-                <button onClick={() => dispatch({ type: 'INCREMENT' })} >INCREMENT</button>
-                <button onClick={() => dispatch({ type: 'DECREMENT' })} > DECREMENT</button>
+                <button onClick={() => dispatch(incrementAction())} >INCREMENT</button>
+                <button onClick={() => dispatch(decrementAction())} > DECREMENT</button>
             </div>
             <input onChange={handleChange} type='number' />
             <button
